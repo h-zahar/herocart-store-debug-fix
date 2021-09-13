@@ -38,6 +38,8 @@ const addToCart = (price) => {
 
 const showDetails = id => {
   document.getElementById('show-info').style.display = 'block';
+  document.getElementById('show-info').innerHTML = 'Loading';
+  
   fetch(`https://fakestoreapi.com/products/${id}`)
   .then(res => res.json())
   .then(data => detailedInfo(data));
