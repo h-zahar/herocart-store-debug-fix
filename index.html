@@ -18,9 +18,19 @@
 </head>
 
 <body>
-  <header><h1 class="text-center site-name"><span class="color-1">Hero</span><span class="color-2">Cart</span> Store</h1></header>
+  <!-- Site Name as Header -->
+  <header>
+    <h1 class="text-center site-name"><span class="color-1">Hero</span><span class="color-2">Cart</span> Store</h1>
+  </header>
+
   <main class="main">
-    <div class="info-header"><div id="show-info"></div></div>
+
+    <!-- Product Details Message Area with Customized Modal included by JS -->
+    <div class="info-header">
+      <div id="show-info"></div>
+    </div>
+
+    <!-- Customized Search Area -->
     <div class="search-area">
       <div class="search-box">
         <input id="input-field" class="search-field" type="text">
@@ -31,6 +41,7 @@
       </div>
     </div>
 
+    <!-- Cart Section -->
     <div class="row">
       <div class="col-md-9 col-lg-9 col-sm-7">
         <div id="all-products" class="">
@@ -51,6 +62,7 @@
             <tbody>
               <tr>
                 <th>Total Added-Products:</th>
+                <!-- Fixed yhe Bug of Removing Dollar Sign -->
                 <td><span id="total-Products">0</span></td>
                 <td></td>
                 <td></td>
