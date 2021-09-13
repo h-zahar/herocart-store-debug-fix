@@ -32,8 +32,8 @@ const showProducts = products => {
 
       <div class="margin-adjust-top">Rating: ${product.rating.rate}</div><div class="margin-adjust-bottom">People Rated: ${product.rating.count}</div>
 
-      <button onclick="addToCart(${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger" onclick="showDetails(${product.id})">Details</button></div>
+      <button onclick="addToCart(${product.price})" id="addToCart-btn" class="buy-now">add to cart</button>
+      <button id="details-btn" class="" onclick="showDetails(${product.id})">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
