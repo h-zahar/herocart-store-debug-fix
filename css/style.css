@@ -26,8 +26,7 @@ body {
 /* Modal Designing */
 #show-info {
   display: none;
-  left: 15%;
-  width: 75%;
+  width: 74.5%;
   background-color: rgb(248, 246, 250);
   border: 1px solid rgba(0, 0, 0, 0.322);
   box-shadow: 5px -5px 5px rgba(10, 10, 10, 0.356);
@@ -200,10 +199,20 @@ body {
   .cart-main {
     padding-right: 10px;
   }
+
+  /* Modal Responsiveness */
+  .info-header {
+    left: 15%;
+  }
 }
 @media only screen and (max-width: 468px) {
   #all-products {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Modal responsiveness */
+  .info-header {
+    left: 15%;
   }
 }
