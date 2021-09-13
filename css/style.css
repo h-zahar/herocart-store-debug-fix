@@ -3,6 +3,52 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.site-name {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.514);
+}
+
+.color-1 {
+  color: rgb(77, 47, 146);
+}
+
+.color-2 {
+  color: rgb(94, 93, 93);
+}
+
+.info-header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+#show-info {
+  display: none;
+  left: 15%;
+  width: 75%;
+  margin: 45px auto 50px auto;
+  background-color: rgb(248, 246, 250);
+  border: 1px solid rgba(0, 0, 0, 0.322);
+  box-shadow: 5px -5px 5px rgba(10, 10, 10, 0.356);
+  border-radius: 5px;
+  padding: 5px 35px 20px 35px;
+}
+
+#close-button {
+  display: block;
+  background-color: rgb(228, 72, 72);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin: 20px auto 5px auto;
+  transition: all 0.8s;
+}
+
+#close-button:hover {
+  transform: scale(1.2);
+  background-color: rgb(76, 103, 189);
+}
+
 .margin-adjust-top {
   margin-top: 20px;
   margin-bottom: 5px;
@@ -14,13 +60,12 @@ body {
 .search-field {
   border: none;
   border-radius: 20px 0 0 20px;
-  border-right: 1px solid rgb(22, 22, 180);
   padding: 5px;
   outline: none;
 }
 .search-field:hover {
   outline: none;
-  border-right: 1px solid rgb(22, 180, 114);
+  border-right: 1px solid rgb(127, 238, 160);
 }
 
 .search-area {
@@ -29,21 +74,32 @@ body {
 
 .search-box {
   display: flex;
-  border: 1px solid rgb(3, 118, 211);
+  border: 1px solid black;
   width: 281px;
   border-radius: 2px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
 }
+
+.search-box:hover {
+  border: 1px solid rgb(146, 94, 243);
+}
+
 .search-button {
   border: none;
   padding: 10px 0;
-  margin-top: -0.5px;
+  margin-top: -0.6px;
   width: 100%;
-  background-color: rgb(92, 92, 243);
+  background-color: black;
   color: white;
   font-size: 1.1em;
+  transition: all 0.5s;
 }
+
+.search-button:hover {
+  background-color: rgb(152, 12, 245);
+}
+
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -51,17 +107,22 @@ body {
   text-align: center;
   width: 100%;
   margin: auto;
-  align-items: center;
   justify-content: center;
 }
 .single-product {
   padding: 10px;
-  transition: 0.6s;
+  /* background-color: blanchedalmond; */
+  background: linear-gradient(white, rgb(43, 42, 42));
+  color: aliceblue;
+  box-shadow: 4px 4px 7px gray;
+  border: 1px solid white;
+  transition: all 1s;
+  margin-bottom: 40px;
 }
 .single-product:hover {
-  box-shadow: 4px 4px 7px gray;
-  border-radius: 10px;
-  border: 1px solid cyan;
+  box-shadow: none;
+  background: black;
+  border-radius: 20px;
 }
 .product-image {
   width: 150px;

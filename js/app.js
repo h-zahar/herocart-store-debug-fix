@@ -9,7 +9,7 @@ const loadProducts = () => {
 const showProducts = products => {
   const allProducts = products.map(pd => pd);
   for (const product of allProducts) {
-    const image = product.images;
+    const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
@@ -20,14 +20,14 @@ const showProducts = products => {
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
       <div class="margin-adjust-top">Rating: ${product.rating.rate}</div><div class="margin-adjust-bottom">People Rated: ${product.rating.count}</div>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <button onclick="addToCart(${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+      <button id="details-btn" class="btn btn-danger" onclick="showDetails(${product.id})">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
 };
 let count = 0;
-const addToCart = (id, price) => {
+const addToCart = (price) => {
   count = count + 1;
   updatePrice("price", price);
 
@@ -35,6 +35,28 @@ const addToCart = (id, price) => {
   updateTotal();
   document.getElementById("total-Products").innerText = count;
 };
+
+const showDetails = id => {
+  document.getElementById('show-info').style.display = 'block';
+  fetch(`https://fakestoreapi.com/products/${id}`)
+  .then(res => res.json())
+  .then(data => detailedInfo(data));
+}
+ 
+const detailedInfo = data => {
+  showInfo = document.getElementById('show-info');
+  showInfo.style.display = 'none';
+  showInfo.innerHTML = `
+    <h3>${data.title}</h3>
+    <p>${data.description}</p>
+    <button id="close-button">Close</button>
+  `;
+  showInfo.style.display = 'block';
+  document.getElementById('close-button').addEventListener('click', () => {
+    showInfo.innerHTML = '';
+    showInfo.style.display = 'none';
+  })
+}
 
 const getInputValue = id => {
   const element = document.getElementById(id).innerText;
@@ -79,4 +101,5 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal;
 };
+
 loadProducts();
